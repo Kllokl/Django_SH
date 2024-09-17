@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <title>用户添加</title>
+        <style>
+        span{
+            color: red;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1> 用户添加 </h1>
+            <form method="post">
+                {% csrf_token %}
+            <label> 账号名称：
+                <input type='text' name='name' placeholder='用户名'>
+            </label>
+
+            <label> 密码：
+                <input type='password' name='password' placeholder='密码'>
+            </label>
+                <input type='submit' value='提交'><span>{{ tip }}</span>
+            </form>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<h1>用户列表</h1>
+<a href="/user/add/">添加</a>
+<table border="1">
+    <thead>
+    <tr>
+        <td> ID</td>
+        <td> 姓名</td>
+        <td> 密码</td>
+        <td> 操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in info_list %}
+    <tr>
+        <td> {{ user.id }}</td>
+        <td> {{ user.user }}</td>
+        <td> {{user.password}}</td>
+        <td>
+            <a href="/user/del/?nid={{ user.id }}">删除</a>
+            <a href="/user/reset/?nid={{ user.id }}">重置密码</a>
+            <a href="/user/{{ user.id }}/edit/">修改用户名</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

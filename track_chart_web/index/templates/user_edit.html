@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <title>编辑用户</title>
+        <style>
+        span{
+            color: red;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1> 编辑用户 </h1>
+            <form method="post">
+                {% csrf_token %}
+            <label> 修改用户名：
+                <input type='text' class="form-control" name="name"  value="{{ nid.user }}" >
+            </label>
+                <input type='submit' value='提交'><span>{{ tip }}</span>
+            </form>
+    </body>
+</html>
