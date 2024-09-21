@@ -1,0 +1,40 @@
+<!-- templates_learn.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>模板语法学习</title>
+</head>
+<body>
+    <h1>模板语法学习</h1>
+    <div>{{ n1 }}</div>
+    <div>{{ stu_list.0 }}</div>
+    <div>{{ stu_list.1 }}</div>
+    <div>{{ stu_list.2 }}</div>
+    <div>{{ stu_list.3 }}</div>
+
+    {% for stu in stu_list %}
+        <span>{{ stu }}</span>
+    {% endfor %}
+</body>
+<table border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>密码</td>
+        <td>年龄</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in user_list %}
+        <tr>
+            <td>{{ user.id}}</td>
+            <td>{{ user.name}}</td>
+            <td>{{ user.password}}</td>
+            <td>{{ user.age}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</html>
